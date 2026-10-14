@@ -1,0 +1,10 @@
+{
+  "name": "invitacion-animada",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Invitación animada e interactiva Royal Grace",
+  "scripts": {
+    "build": "echo 'Proyecto estatico listo para desplegar'",
+    "start": "python server.py"
+  }
+}
