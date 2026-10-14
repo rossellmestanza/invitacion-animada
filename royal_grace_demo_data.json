@@ -1,0 +1,113 @@
+[
+  {
+    "invitation_id": "e925a4f6-9ace-4751-9b8f-41d98a6a9216",
+    "data": {
+      "message": "",
+      "showGift": true,
+      "timezone": "Europe/London",
+      "brideName": "Nora",
+      "groomName": "Zayn",
+      "venueName": "Grand Palace Hall",
+      "dayProgram": [
+        {
+          "name": "Llegada y Bienvenida",
+          "dateTime": "2027-01-31T10:00",
+          "description": "Les damos la más cordial bienvenida.. ❤"
+        },
+        {
+          "name": "Ceremonia de Boda",
+          "dateTime": "2027-01-31T10:30",
+          "description": "¡Su presencia significa el mundo para nosotros!"
+        },
+        {
+          "name": "Gran Recepción y Fiesta",
+          "dateTime": "2027-02-02T19:30",
+          "description": "Cena de gala, brindis y baile de celebración."
+        }
+      ],
+      "endMessage": "¡Estamos deseando celebrar con ustedes!",
+      "musicTrack": "track3",
+      "rsvpEvents": [],
+      "giftMessage": "Su presencia, amor y bendiciones son el regalo más grande que podríamos pedir en este día.",
+      "messageFont": "cormorant",
+      "messageSize": 0,
+      "scratchText": "",
+      "showWelcome": true,
+      "weddingDate": "2027-01-31",
+      "weddingTime": "10:30",
+      "welcomeFont": "",
+      "welcomeSize": 0,
+      "brideSubText": "Hija de los Sres. Nasser\nMBBS, M.D\nMédico Pediatra",
+      "dressCodeMen": "Traje formal oscuro o vestimenta tradicional de gala",
+      "groomSubText": "Hijo de los Sres. Malik\nB.E., M.S.\nIngeniero de Datos",
+      "messageColor": "#3E5634",
+      "musicEnabled": true,
+      "venueAddress": "City centre, London",
+      "welcomeColor": "",
+      "accommodation": "Tarifas preferenciales en The Grand Palace Hotel (a 5 minutos del salón). Menciona el código BODA2027 al realizar tu reservación.",
+      "showDressCode": true,
+      "showSlideshow": true,
+      "titleTextFont": "",
+      "titleTextSize": 0,
+      "countdownTitle": "",
+      "customMusicUrl": "",
+      "dressCodeWomen": "Vestido largo elegante en tonos pastel o tonos joya",
+      "endMessageFont": "",
+      "endMessageSize": 0,
+      "googleMapsLink": "",
+      "invitationType": "wedding",
+      "showDayProgram": true,
+      "showEndMessage": true,
+      "showPreWedding": true,
+      "showSubClosing": true,
+      "subClosingFont": "",
+      "subClosingSize": 0,
+      "subClosingText": "",
+      "titleTextColor": "",
+      "transportation": "Servicio de transporte disponible desde el centro hacia el salón. Punto de partida: Estación Central a las 3:30 PM.",
+      "useCustomMusic": false,
+      "welcomeMessage": "Nos sentimos honrados de darles la bienvenida a la ceremonia de boda de Zayn y Nora. Al comenzar este nuevo camino juntos en el amor y la bendición, agradecemos profundamente su presencia en esta ocasión tan especial. ❤",
+      "backgroundImage": "",
+      "countdownSource": "wedding",
+      "coupleNamesFont": "greatvibes",
+      "coupleNamesSize": 0,
+      "customTypeLabel": "",
+      "endMessageColor": "",
+      "slideshowImages": [
+        "./assets/images/slide-1.jpg",
+        "./assets/images/slide-2.jpg",
+        "./assets/images/slide-3.jpg",
+        "./assets/images/slide-4.jpg"
+      ],
+      "coupleNamesColor": "#3E5634",
+      "preWeddingEvents": [
+        {
+          "name": "Mahendi",
+          "dateTime": "2027-01-28T20:30",
+          "description": "En la casa de la novia"
+        },
+        {
+          "name": "Haldi",
+          "dateTime": "2027-01-29T20:00",
+          "description": "En la casa del novio"
+        }
+      ],
+      "coupleSubTextFont": "",
+      "coupleSubTextSize": 0,
+      "scratchTextCustom": false,
+      "showAccommodation": true,
+      "showScratchEffect": true,
+      "coupleSubTextColor": "#3E5634",
+      "receptionVenueName": "",
+      "showGuestMessaging": true,
+      "showTransportation": true,
+      "translationEnabled": false,
+      "showBackgroundImage": false,
+      "translationLanguage": "es",
+      "countdownTitleCustom": false,
+      "receptionVenueAddress": "",
+      "receptionGoogleMapsLink": ""
+    },
+    "template_id": "royal-grace"
+  }
+]

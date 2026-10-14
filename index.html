@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Boda de Zayn & Nora | Invitación de Boda Royal Grace</title>
+  <link rel="icon" href="assets/images/favicon.png" type="image/png" />
+
+  <!-- Tipografías elegantes de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #3b4432;
+      --primary-dark: #272f21;
+      --primary-light: #5c6650;
+      --olive-accent: #3E5634;
+      --gold: #8a7a4e;
+      --gold-dark: #6e5e34;
+      --gold-light: #d4af37;
+      --gold-border: rgba(138, 122, 78, 0.45);
+      --cream-bg: #f7f4ed;
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --font-title: 'Dancing Script', cursive;
+      --font-serif: 'Cormorant Garamond', serif;
+      --font-cinzel: 'Cinzel', serif;
+      --font-body: 'Montserrat', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      background-color: #0f0f0f;
+      color: var(--primary);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Fondo principal con texturas de Royal Grace */
+    .main-wrapper {
+      background-color: rgb(214, 197, 172);
+      background-image: url('assets/images/royal-grace-welcome-bg.jpg'), url('assets/images/royal-grace-general-bg.jpg');
+      background-position: top center, center 140.4888vw;
+      background-repeat: no-repeat, repeat-y;
+      background-size: 100% auto, 100% auto;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Botón flotante de música */
+    .audio-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 999;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(247, 244, 237, 0.95);
+      border: 1.5px solid var(--gold);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .audio-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 22px rgba(138, 122, 78, 0.4);
+    }
+
+    .audio-btn svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--primary);
+    }
+
+    .audio-btn.playing {
+      animation: spinRecord 6s linear infinite;
+      border-color: var(--gold-light);
+    }
+
+    @keyframes spinRecord {
+      100% { transform: rotate(360deg); }
+    }
+
+    /* HERO SECTION CON VIDEO DE APERTURA 3D */
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0f0f0f;
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    /* Overlay inicial "Toca para abrir" */
+    .tap-to-open-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 90px;
+      background: radial-gradient(circle at center, rgba(0,0,0,0) 30%, rgba(0,0,0,0.55) 100%);
+      cursor: pointer;
+      transition: opacity 0.8s ease, visibility 0.8s;
+    }
+
+    .tap-to-open-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .tap-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 30px;
+      border-radius: 50px;
+      background: rgba(247, 244, 237, 0.95);
+      border: 1px solid var(--gold);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+      color: var(--primary);
+      font-family: var(--font-cinzel);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      animation: floatBadge 2.4s infinite ease-in-out;
+      backdrop-filter: blur(10px);
+    }
+
+    @keyframes floatBadge {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* Tarjeta de Título Animada sobre el video */
+    .hero-content {
+      position: relative;
+      top: -30px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 24px;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1), transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-content.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-heart-icon {
+      color: #3b4432;
+      width: 26px;
+      height: 26px;
+      margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-title);
+      font-size: clamp(1.8rem, 5.5vw, 2.8rem);
+      color: #3b4432;
+      text-shadow: 0 2px 14px rgba(255, 255, 255, 0.7);
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+
+    .hero-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 8px 0 14px;
+    }
+
+    .hero-divider .line {
+      height: 1px;
+      width: 65px;
+      background-color: rgba(59, 68, 50, 0.45);
+    }
+
+    .couple-name {
+      font-family: var(--font-title);
+      font-size: clamp(3.2rem, 11vw, 6.2rem);
+      line-height: 0.95;
+      color: #3b4432;
+      text-shadow: 0 3px 18px rgba(255, 255, 255, 0.75);
+    }
+
+    .couple-subtext {
+      font-family: var(--font-serif);
+      font-size: clamp(0.95rem, 2.8vw, 1.15rem);
+      color: #3b4432;
+      font-weight: 500;
+      margin-top: 5px;
+      opacity: 0.9;
+      line-height: 1.35;
+      white-space: pre-line;
+    }
+
+    .ampersand {
+      font-family: var(--font-title);
+      font-size: clamp(2.2rem, 6vw, 3.4rem);
+      color: rgba(59, 68, 50, 0.85);
+      margin: 4px 0;
+      text-shadow: 0 2px 10px rgba(255, 255, 255, 0.6);
+    }
+
+    /* Indicador animado de scroll */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 25px;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .scroll-indicator.visible {
+      opacity: 1;
+      animation: bounceDown 2s infinite ease-in-out;
+    }
+
+    .scroll-indicator span {
+      font-family: var(--font-cinzel);
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(59, 68, 50, 0.85);
+      font-weight: 600;
+      text-shadow: 0 1px 6px rgba(255, 255, 255, 0.6);
+    }
+
+    .scroll-indicator svg {
+      width: 20px;
+      height: 20px;
+      stroke: #3b4432;
+    }
+
+    @keyframes bounceDown {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    /* SECCIÓN DE BIENVENIDA */
+    .welcome-section {
+      padding: 70px 24px 60px;
+      text-align: center;
+      position: relative;
+    }
+
+    .welcome-container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .ornament-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .ornament-line .line-half {
+      height: 1px;
+      width: 75px;
+      background: linear-gradient(to right, transparent, var(--gold));
+    }
+
+    .ornament-line .line-half.rev {
+      background: linear-gradient(to left, transparent, var(--gold));
+    }
+
+    .welcome-message {
+      font-family: var(--font-serif);
+      font-size: clamp(1.3rem, 3.8vw, 1.75rem);
+      line-height: 1.6;
+      font-style: italic;
+      color: #3b4432;
+      text-shadow: 0 1px 6px rgba(255, 255, 255, 0.5);
+      white-space: pre-wrap;
+    }
+
+    /* TARJETA RASPADITA EN FORMA DE CORAZÓN (ROYAL HEART SCRATCH CARD) */
+    .scratch-section {
+      padding: 24px 20px 45px;
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .scratch-card-box {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1.5px solid rgba(184, 157, 82, 0.45);
+      border-radius: 24px;
+      padding: 34px 22px 28px;
+      box-shadow: 0 16px 40px rgba(59, 68, 50, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+      position: relative;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .scratch-header-wrap {
+      margin-bottom: 22px;
+    }
+
+    .scratch-heart-title {
+      font-family: 'Great Vibes', 'Dancing Script', cursive;
+      font-size: clamp(2.3rem, 6vw, 3.2rem);
+      color: hsl(40, 70%, 38%);
+      text-shadow: 0 2px 8px rgba(184, 157, 82, 0.25);
+      margin-bottom: 8px;
+      line-height: 1.15;
+      animation: heartTitlePulse 2.4s ease-in-out infinite;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes heartTitlePulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+
+    .gold-mini-divider {
+      width: 90px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #b89d52 50%, transparent);
+      margin: 0 auto;
+      border-radius: 999px;
+      opacity: 0.85;
+    }
+
+    /* Contenedor del Corazón con aspect-ratio 13/12 de Royal Grace */
+    .heart-scratch-container {
+      position: relative;
+      margin: 0 auto;
+      aspect-ratio: 13 / 12;
+      width: 100%;
+      max-width: 250px;
+    }
+
+    .heart-shadow-layer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      clip-path: url(#royal-heart-clip);
+      -webkit-clip-path: url(#royal-heart-clip);
+      background: transparent;
+      filter: drop-shadow(0 12px 22px rgba(60, 25, 5, 0.32));
+    }
+
+    .heart-clip-boundary {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      clip-path: url(#royal-heart-clip);
+      -webkit-clip-path: url(#royal-heart-clip);
+    }
+
+    .heart-revealed-card {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 22px 20px 14px;
+      text-align: center;
+      background-color: hsl(38, 50%, 93%);
+      background-image: 
+        radial-gradient(ellipse at center, hsla(38, 55%, 98%, 0.9) 0%, hsla(38, 45%, 88%, 0.4) 70%, hsla(36, 40%, 80%, 0.6) 100%),
+        radial-gradient(circle at 1px 1px, hsla(40, 60%, 35%, 0.10) 1px, transparent 1.5px),
+        repeating-linear-gradient(45deg, rgba(0,0,0,0.04) 0 1px, transparent 1px 8px),
+        repeating-linear-gradient(-45deg, rgba(0,0,0,0.03) 0 1px, transparent 1px 10px);
+      background-size: auto, 12px 12px, auto, auto;
+      user-select: none;
+    }
+
+    .heart-invited-text {
+      font-family: 'Great Vibes', 'Dancing Script', cursive;
+      font-size: 1.65rem;
+      font-style: italic;
+      color: hsl(352, 55%, 36%);
+      margin: 0 0 2px 0;
+      line-height: 1.15;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    }
+
+    .heart-date-number {
+      font-family: var(--font-cinzel);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: hsl(24, 30%, 14%);
+      margin: 2px 0;
+      letter-spacing: 1px;
+      line-height: 1.2;
+    }
+
+    .heart-date-day {
+      font-family: 'Great Vibes', 'Dancing Script', cursive;
+      font-size: 1.35rem;
+      color: hsl(40, 70%, 38%);
+      margin: 0;
+      line-height: 1.1;
+    }
+
+    .heart-date-time {
+      font-family: var(--font-serif);
+      font-size: 0.78rem;
+      color: hsl(24, 18%, 30%);
+      margin-top: 2px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+    }
+
+    .scratch-heart-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      cursor: crosshair;
+      touch-action: none;
+      z-index: 2;
+      transition: opacity 0.75s ease;
+    }
+
+    .scratch-heart-canvas.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .heart-3d-shadow {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0) 76%, rgba(20,8,0,0.55) 92%, rgba(10,4,0,0.85) 100%);
+      mix-blend-mode: multiply;
+      z-index: 3;
+    }
+
+    .heart-3d-highlight {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(ellipse at 38% 22%, rgba(255,255,255,0.24) 0%, rgba(255,255,255,0) 34%);
+      z-index: 4;
+    }
+
+    .heart-border-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    /* SECCIÓN DE CARRUSEL DE FOTOS (PHOTO SLIDESHOW) */
+    .carousel-section {
+      padding: 30px 20px 48px;
+      max-width: 540px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .carousel-container {
+      position: relative;
+    }
+
+    .carousel-gold-divider {
+      width: 75px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #b89d52 50%, transparent);
+      margin: 0 auto 16px;
+      border-radius: 999px;
+    }
+
+    .carousel-subtitle {
+      font-family: 'Great Vibes', 'Dancing Script', cursive;
+      font-size: 1.7rem;
+      color: var(--olive-accent);
+      margin-top: -4px;
+      margin-bottom: 24px;
+      text-shadow: 0 1px 4px rgba(255, 255, 255, 0.6);
+    }
+
+    .carousel-card-frame {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      margin: 0 auto;
+      aspect-ratio: 4 / 5;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(59, 68, 50, 0.18), 0 0 0 1.5px rgba(184, 157, 82, 0.45);
+      background: #181c15;
+      user-select: none;
+      touch-action: pan-y;
+      cursor: grab;
+    }
+
+    .carousel-card-frame:active {
+      cursor: grabbing;
+    }
+
+    .carousel-slides-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .carousel-slide.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .carousel-blur-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.18);
+      filter: blur(22px);
+      opacity: 0.68;
+    }
+
+    .carousel-inner-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.12);
+    }
+
+    .carousel-img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .carousel-bottom-gradient {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 95px;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.52), transparent);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.28);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1.2px solid rgba(255, 255, 255, 0.55);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 4;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    .carousel-arrow:hover {
+      background: rgba(184, 157, 82, 0.9);
+      border-color: #f7f2e6;
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .carousel-prev {
+      left: 12px;
+    }
+
+    .carousel-next {
+      right: 12px;
+    }
+
+    .carousel-dots-container {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 4;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.45);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .carousel-dot.active {
+      width: 24px;
+      background: #dfb758;
+      box-shadow: 0 0 12px rgba(223, 183, 88, 0.8);
+    }
+
+    /* CONTADOR REGRESIVO EN VIVO */
+    .countdown-section {
+      padding: 30px 20px 50px;
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section-title {
+      font-family: var(--font-cinzel);
+      font-size: 1.25rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      font-weight: 600;
+    }
+
+    .section-title::before, .section-title::after {
+      content: "";
+      height: 1px;
+      width: 40px;
+      background: var(--gold);
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+
+    .countdown-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--gold-border);
+      border-radius: 12px;
+      padding: 16px 8px;
+      box-shadow: 0 4px 15px rgba(59, 68, 50, 0.06);
+      transition: transform 0.3s ease;
+    }
+
+    .countdown-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .countdown-number {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      font-weight: 700;
+      color: var(--olive-accent);
+      line-height: 1;
+    }
+
+    .countdown-label {
+      font-family: var(--font-cinzel);
+      font-size: 0.68rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary-light);
+      margin-top: 6px;
+      font-weight: 600;
+    }
+
+    /* ITINERARIO DEL DÍA */
+    .timeline-section {
+      padding: 30px 20px 50px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .timeline-list {
+      position: relative;
+      padding-left: 30px;
+      margin-top: 30px;
+    }
+
+    .timeline-list::before {
+      content: "";
+      position: absolute;
+      left: 11px;
+      top: 15px;
+      bottom: 20px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), rgba(138, 122, 78, 0.25));
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 28px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -30px;
+      top: 12px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #f7f4ed;
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+
+    .timeline-dot svg {
+      width: 12px;
+      height: 12px;
+      fill: var(--olive-accent);
+    }
+
+    .timeline-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--gold-border);
+      border-radius: 12px;
+      padding: 18px 22px;
+      box-shadow: 0 4px 15px rgba(59, 68, 50, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .timeline-time {
+      font-family: var(--font-cinzel);
+      font-size: 0.85rem;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .timeline-name {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .timeline-desc {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    /* EVENTOS PREVIOS */
+    .pre-events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 25px;
+    }
+
+    .event-box {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--gold-border);
+      border-radius: 14px;
+      padding: 24px 20px;
+      text-align: center;
+      box-shadow: 0 4px 18px rgba(59, 68, 50, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .event-box:hover {
+      transform: translateY(-3px);
+    }
+
+    .event-box-title {
+      font-family: var(--font-title);
+      font-size: 2.3rem;
+      color: var(--olive-accent);
+      margin-bottom: 6px;
+    }
+
+    .event-box-date {
+      font-family: var(--font-cinzel);
+      font-size: 0.82rem;
+      letter-spacing: 1.5px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .event-box-desc {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    /* TARJETAS DE INFORMACIÓN (LUGAR, VESTIMENTA, ETC.) */
+    .info-card {
+      background: rgba(255, 255, 255, 0.93);
+      border: 1px solid var(--gold-border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      margin-bottom: 24px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(59, 68, 50, 0.06);
+    }
+
+    .info-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: rgba(138, 122, 78, 0.12);
+      border: 1px solid var(--gold-border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      color: var(--gold);
+    }
+
+    .info-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--olive-accent);
+    }
+
+    .info-title {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      color: var(--primary);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .info-subtitle {
+      font-family: var(--font-cinzel);
+      font-size: 0.95rem;
+      color: var(--gold);
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .info-body {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #555;
+      max-width: 480px;
+      margin: 0 auto 16px;
+    }
+
+    /* MAPA GOOGLE EMBEBIDO */
+    .map-frame-container {
+      width: 100%;
+      height: 220px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 16px 0;
+      border: 1px solid var(--gold-border);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .map-frame-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* BOTÓN DORADO */
+    .gold-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #8a7a4e 0%, #685b34 100%);
+      color: #ffffff;
+      font-family: var(--font-cinzel);
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(138, 122, 78, 0.35);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .gold-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(138, 122, 78, 0.45);
+      filter: brightness(1.08);
+    }
+
+    /* CÓDIGO DE VESTIMENTA */
+    .dress-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 15px;
+    }
+
+    .dress-box {
+      background: rgba(247, 244, 237, 0.7);
+      border-radius: 12px;
+      padding: 18px 16px;
+      border: 1px dashed var(--gold-border);
+    }
+
+    .dress-role {
+      font-family: var(--font-cinzel);
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+      color: var(--olive-accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .dress-desc {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.4;
+    }
+
+    /* FORMULARIO DE CONFIRMACIÓN RSVP */
+    .rsvp-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 440px;
+      margin: 20px auto 0;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: var(--font-cinzel);
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .form-input, .form-textarea, .form-select {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 1px solid rgba(138, 122, 78, 0.4);
+      background: rgba(255, 255, 255, 0.95);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: #333;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(138, 122, 78, 0.15);
+    }
+
+    /* FOOTER Y CIERRE */
+    .closing-section {
+      background-image: url('assets/images/royal-grace-end-bg.jpg');
+      background-size: cover;
+      background-position: center bottom;
+      padding: 90px 20px 70px;
+      text-align: center;
+      position: relative;
+    }
+
+    .closing-text {
+      font-family: var(--font-title);
+      font-size: clamp(2.2rem, 6.5vw, 3.6rem);
+      color: #3b4432;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 10px rgba(255, 255, 255, 0.65);
+    }
+
+    .closing-names {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      color: var(--primary);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* CONFETTI CANVAS */
+    #confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ANIMACIONES AL HACER SCROLL */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .animate-on-scroll.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Audio de fondo -->
+  <audio id="bg-audio" loop preload="auto">
+    <source src="assets/audio/track3.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Botón flotante para música -->
+  <button id="audio-toggle-btn" class="audio-btn" title="Activar/Silenciar música">
+    <svg id="audio-icon-muted" viewBox="0 0 24 24">
+      <path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6m0-6l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    <svg id="audio-icon-playing" style="display:none;" viewBox="0 0 24 24">
+      <path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+  </button>
+
+  <!-- CANVAS DE CONFETTI -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- SECCIÓN HERO (VIDEO DE APERTURA 3D) -->
+  <section class="hero-section" id="hero-sec">
+    <video
+      id="hero-video"
+      class="hero-video"
+      playsinline
+      muted
+      preload="auto"
+      poster="assets/images/royal-grace-poster.jpg"
+      src="assets/videos/demo-royal-grace.mp4"
+    ></video>
+
+    <!-- Overlay "Toca para abrir" -->
+    <div id="tap-overlay" class="tap-to-open-overlay">
+      <div class="tap-badge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/>
+        </svg>
+        <span>Toca para abrir la invitación</span>
+      </div>
+    </div>
+
+    <!-- Contenido animado de los novios sobre el video -->
+    <div id="hero-card" class="hero-content">
+      <svg class="hero-heart-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+      <p class="hero-subtitle">¡Nos Casamos!</p>
+      
+      <div class="hero-divider">
+        <div class="line"></div>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        <div class="line"></div>
+      </div>
+
+      <h1 class="couple-name">Zayn</h1>
+      <p class="couple-subtext">Hijo de los Sres. Malik<br>B.E., M.S. · Ingeniero de Datos</p>
+
+      <div class="ampersand">&</div>
+
+      <h1 class="couple-name">Nora</h1>
+      <p class="couple-subtext">Hija de los Sres. Nasser<br>MBBS, M.D · Médico Pediatra</p>
+    </div>
+
+    <!-- Indicador de desplazamiento -->
+    <div id="scroll-hint" class="scroll-indicator">
+      <span>Desliza hacia abajo</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+  </section>
+
+  <!-- CONTENEDOR PRINCIPAL CON TEXTURAS ROYAL GRACE -->
+  <main class="main-wrapper">
+
+    <!-- SECCIÓN DE BIENVENIDA -->
+    <section class="welcome-section animate-on-scroll">
+      <div class="welcome-container">
+        <div class="ornament-line">
+          <div class="line-half"></div>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <div class="line-half rev"></div>
+        </div>
+
+        <p class="welcome-message">
+Nos sentimos honrados de darles la bienvenida a la ceremonia de boda de Zayn & Nora. Al comenzar este nuevo camino juntos en el amor y la bendición, agradecemos profundamente su presencia en esta ocasión tan especial. ❤
+        </p>
+
+        <div class="ornament-line">
+          <div class="line-half"></div>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <div class="line-half rev"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEFINICIÓN SVG DE CLIP-PATH EN FORMA DE CORAZÓN EXACTO DE ROYAL GRACE -->
+    <svg width="0" height="0" style="position: absolute; pointer-events: none;" aria-hidden="true">
+      <defs>
+        <clipPath id="royal-heart-clip" clipPathUnits="objectBoundingBox">
+          <path d="M0.5,0.96 C0.5,0.96 0.06,0.70 0.06,0.36 C0.06,0.18 0.20,0.06 0.32,0.06 C0.42,0.06 0.48,0.14 0.5,0.24 C0.52,0.14 0.58,0.06 0.68,0.06 C0.80,0.06 0.94,0.18 0.94,0.36 C0.94,0.70 0.5,0.96 0.5,0.96 Z"/>
+        </clipPath>
+      </defs>
+    </svg>
+
+    <!-- SECCIÓN DE RASPADITA EN FORMA DE CORAZÓN (ROYAL HEART SCRATCH CARD) -->
+    <section class="scratch-section animate-on-scroll">
+      <div class="scratch-card-box">
+        <!-- Título animado con transición suave -->
+        <div class="scratch-header-wrap">
+          <h2 id="scratch-main-title" class="scratch-heart-title">Rasca para Descubrir</h2>
+          <div class="gold-mini-divider"></div>
+        </div>
+
+        <!-- Contenedor del Corazón con proporción 13/12 exacta -->
+        <div class="heart-scratch-container">
+          <!-- Capa de sombra exterior recortada en corazón -->
+          <div class="heart-shadow-layer" aria-hidden="true"></div>
+
+          <!-- Capa recortada interior con contenido y canvas -->
+          <div class="heart-clip-boundary">
+            <!-- Contenido revelado debajo del canvas -->
+            <div class="heart-revealed-card">
+              <p class="heart-invited-text">¡Estás Invitado!</p>
+              <p class="heart-date-number">31 · Enero · 2027</p>
+              <p class="heart-date-day">Domingo</p>
+              <p class="heart-date-time">10:30 AM</p>
+            </div>
+
+            <!-- Canvas interactivo con textura dorada que se raspa -->
+            <canvas id="scratch-canvas" class="scratch-heart-canvas"></canvas>
+
+            <!-- Capas de sombras y brillos 3D idénticas a Royal Grace -->
+            <div class="heart-3d-shadow" aria-hidden="true"></div>
+            <div class="heart-3d-highlight" aria-hidden="true"></div>
+          </div>
+
+          <!-- Borde dorado SVG superpuesto al corazón -->
+          <svg viewBox="0 0 100 100" class="heart-border-svg" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M50,96 C50,96 6,70 6,36 C6,18 20,6 32,6 C42,6 48,14 50,24 C52,14 58,6 68,6 C80,6 94,18 94,36 C94,70 50,96 50,96 Z" fill="none" stroke="hsl(40, 70%, 38%)" stroke-width="1.3" vector-effect="non-scaling-stroke" opacity="0.8"></path>
+          </svg>
+        </div>
+
+        <!-- Botón para sincronizar con calendario -->
+        <button onclick="addToCalendar()" class="gold-btn" style="margin-top: 24px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          Agregar al Calendario
+        </button>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE CARRUSEL DE IMÁGENES (PHOTO SLIDESHOW) -->
+    <section class="carousel-section animate-on-scroll">
+      <div class="carousel-container">
+        <!-- Divisor dorado superior -->
+        <div class="carousel-gold-divider"></div>
+        <h2 class="section-title">Nuestros Momentos</h2>
+        <p class="carousel-subtitle">Galería de amor y recuerdos</p>
+
+        <!-- Visor del Carrusel -->
+        <div class="carousel-card-frame" id="carouselFrame">
+          <div class="carousel-slides-wrapper" id="carouselWrapper">
+            <!-- Slide 1 -->
+            <div class="carousel-slide active">
+              <img src="./assets/images/slide-1.jpg" alt="" class="carousel-blur-bg" aria-hidden="true" />
+              <div class="carousel-inner-overlay"></div>
+              <img src="./assets/images/slide-1.jpg" alt="Momento 1" class="carousel-img" />
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
+              <img src="./assets/images/slide-2.jpg" alt="" class="carousel-blur-bg" aria-hidden="true" />
+              <div class="carousel-inner-overlay"></div>
+              <img src="./assets/images/slide-2.jpg" alt="Momento 2" class="carousel-img" />
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-slide">
+              <img src="./assets/images/slide-3.jpg" alt="" class="carousel-blur-bg" aria-hidden="true" />
+              <div class="carousel-inner-overlay"></div>
+              <img src="./assets/images/slide-3.jpg" alt="Momento 3" class="carousel-img" />
+            </div>
+            <!-- Slide 4 -->
+            <div class="carousel-slide">
+              <img src="./assets/images/slide-4.jpg" alt="" class="carousel-blur-bg" aria-hidden="true" />
+              <div class="carousel-inner-overlay"></div>
+              <img src="./assets/images/slide-4.jpg" alt="Momento 4" class="carousel-img" />
+            </div>
+          </div>
+
+          <!-- Gradiente sutil inferior -->
+          <div class="carousel-bottom-gradient"></div>
+
+          <!-- Flechas de navegación elegantes -->
+          <button class="carousel-arrow carousel-prev" id="carouselPrevBtn" aria-label="Foto anterior">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="carousel-arrow carousel-next" id="carouselNextBtn" aria-label="Siguiente foto">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+
+          <!-- Puntos indicadores de navegación -->
+          <div class="carousel-dots-container" id="carouselDots">
+            <button class="carousel-dot active" aria-label="Foto 1"></button>
+            <button class="carousel-dot" aria-label="Foto 2"></button>
+            <button class="carousel-dot" aria-label="Foto 3"></button>
+            <button class="carousel-dot" aria-label="Foto 4"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTADOR REGRESIVO -->
+    <section class="countdown-section animate-on-scroll">
+      <h2 class="section-title">Faltan Sólo</h2>
+      <div class="countdown-grid">
+        <div class="countdown-card">
+          <div class="countdown-number" id="cd-days">00</div>
+          <div class="countdown-label">Días</div>
+        </div>
+        <div class="countdown-card">
+          <div class="countdown-number" id="cd-hours">00</div>
+          <div class="countdown-label">Horas</div>
+        </div>
+        <div class="countdown-card">
+          <div class="countdown-number" id="cd-minutes">00</div>
+          <div class="countdown-label">Minutos</div>
+        </div>
+        <div class="countdown-card">
+          <div class="countdown-number" id="cd-seconds">00</div>
+          <div class="countdown-label">Segundos</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ITINERARIO / PROGRAMA DEL DÍA -->
+    <section class="timeline-section animate-on-scroll">
+      <h2 class="section-title">Itinerario del Día</h2>
+      <div class="timeline-list">
+        
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 14.5h-2v-6h2v6zm0-8h-2V7h2v1.5z"/></svg>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-time">10:00 AM</div>
+            <div class="timeline-name">Llegada y Bienvenida</div>
+            <div class="timeline-desc">Les damos la más cálida bienvenida.. ❤</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-time">10:30 AM</div>
+            <div class="timeline-name">Ceremonia de Boda</div>
+            <div class="timeline-desc">¡Su presencia significa el mundo para nosotros!</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-time">07:30 PM</div>
+            <div class="timeline-name">Gran Recepción y Fiesta</div>
+            <div class="timeline-desc">Cena de gala, brindis y baile de celebración.</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EVENTOS PREVIOS -->
+    <section class="timeline-section animate-on-scroll">
+      <h2 class="section-title">Eventos Previos</h2>
+      <div class="pre-events-grid">
+        <div class="event-box">
+          <h3 class="event-box-title">Mahendi</h3>
+          <div class="event-box-date">28 Enero 2027 · 08:30 PM</div>
+          <div class="event-box-desc">En la casa de la novia</div>
+        </div>
+        <div class="event-box">
+          <h3 class="event-box-title">Haldi</h3>
+          <div class="event-box-date">29 Enero 2027 · 08:00 PM</div>
+          <div class="event-box-desc">En la casa del novio</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LUGAR Y MAPA INTERACTIVO -->
+    <section class="timeline-section animate-on-scroll">
+      <div class="info-card">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+        <h3 class="info-title">Lugar de la Celebración</h3>
+        <div class="info-subtitle">Grand Palace Hall</div>
+        <p class="info-body">City centre, London (Londres)</p>
+        
+        <!-- Mapa interactivo en vivo -->
+        <div class="map-frame-container">
+          <iframe 
+            src="https://maps.google.com/maps?q=Grand%20Palace%20Hall%2C%20City%20centre%2C%20London&t=m&z=14&output=embed" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación Grand Palace Hall"
+          ></iframe>
+        </div>
+
+        <a href="https://www.google.com/maps/search/?api=1&query=Grand+Palace+Hall+City+centre+London" target="_blank" class="gold-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+          </svg>
+          Abrir en Google Maps
+        </a>
+      </div>
+    </section>
+
+    <!-- CÓDIGO DE VESTIMENTA -->
+    <section class="timeline-section animate-on-scroll">
+      <div class="info-card">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/>
+          </svg>
+        </div>
+        <h3 class="info-title">Código de Vestimenta</h3>
+        <div class="info-subtitle">Formal Elegante</div>
+        <div class="dress-grid">
+          <div class="dress-box">
+            <div class="dress-role">Caballeros</div>
+            <div class="dress-desc">Traje formal oscuro o vestimenta tradicional de gala</div>
+          </div>
+          <div class="dress-box">
+            <div class="dress-role">Damas</div>
+            <div class="dress-desc">Vestido largo elegante en tonos pastel o tonos joya</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOSPEDAJE Y TRANSPORTE -->
+    <section class="timeline-section animate-on-scroll">
+      <div class="info-card">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 7v11m0-4h18m0-7v11M7 10h.01M2 17h20M4 10a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4H4v-4z"/>
+          </svg>
+        </div>
+        <h3 class="info-title">Hospedaje</h3>
+        <p class="info-body">
+Tarifas preferenciales especiales en <strong>The Grand Palace Hotel</strong> (a solo 5 minutos del salón). Menciona el código <strong>BODA2027</strong> al realizar tu reservación.
+        </p>
+      </div>
+
+      <div class="info-card animate-on-scroll">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+        </div>
+        <h3 class="info-title">Transporte y Traslados</h3>
+        <p class="info-body">
+Habrá servicio de transporte exclusivo desde el centro de la ciudad hacia el salón. Punto de partida: Estación Central a las 3:30 PM.
+        </p>
+      </div>
+    </section>
+
+    <!-- MESA DE REGALOS -->
+    <section class="timeline-section animate-on-scroll">
+      <div class="info-card">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 12 20 22 4 22 4 12"></polyline>
+            <rect x="2" y="7" width="20" height="5"></rect>
+            <line x1="12" y1="22" x2="12" y2="7"></line>
+            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+          </svg>
+        </div>
+        <h3 class="info-title">Mesa de Regalos</h3>
+        <p class="info-body" style="font-style: italic; font-size: 1rem; color: #444;">
+"Su presencia, amor y bendiciones son el regalo más grande que podríamos pedir en este día."
+        </p>
+        <p class="info-body" style="font-size: 0.85rem; margin-top: -6px;">
+Si desean tener un detalle adicional, contaremos con un buzón de sobres el día de la celebración.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONFIRMACIÓN DE ASISTENCIA (RSVP) -->
+    <section class="timeline-section animate-on-scroll">
+      <div class="info-card">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </div>
+        <h3 class="info-title">Confirmar Asistencia (RSVP)</h3>
+        <p class="info-body">Por favor confirmen su asistencia antes del 15 de Enero de 2027.</p>
+
+        <form id="rsvp-form" class="rsvp-form" onsubmit="handleRSVP(event)">
+          <div class="form-group">
+            <label for="guest-name">Nombre Completo</label>
+            <input type="text" id="guest-name" class="form-input" placeholder="Tu nombre y apellidos" required />
+          </div>
+
+          <div class="form-group">
+            <label for="guest-count">Número de Acompañantes</label>
+            <select id="guest-count" class="form-select">
+              <option value="1">1 Persona</option>
+              <option value="2" selected>2 Personas</option>
+              <option value="3">3 Personas</option>
+              <option value="4">4 Personas</option>
+              <option value="5 o más">5 o más Personas</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="attendance">¿Podrás asistir?</label>
+            <select id="attendance" class="form-select">
+              <option value="Sí, asistiré con mucho gusto">¡Sí, asistiré con mucho gusto! 🎉</option>
+              <option value="Lamentablemente no podré asistir">Lamentablemente no podré asistir 🤍</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="guest-msg">Dedicatoria para los novios</label>
+            <textarea id="guest-msg" class="form-textarea" rows="3" placeholder="Escribe aquí un mensaje especial o felicitación..."></textarea>
+          </div>
+
+          <button type="submit" class="gold-btn" style="justify-content: center; margin-top: 10px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/>
+            </svg>
+            Confirmar Asistencia por WhatsApp
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- CIERRE DE LA INVITACIÓN -->
+    <footer class="closing-section">
+      <h2 class="closing-text">¡Estamos deseando celebrar con ustedes!</h2>
+      <div class="closing-names">Zayn &amp; Nora</div>
+    </footer>
+
+  </main>
+
+  <!-- JAVASCRIPT DE ANIMACIONES, VIDEO, AUDIO, RASPADITA Y CONTADOR -->
+  <script>
+    // 1. MANEJO DE AUDIO & VIDEO
+    const audio = document.getElementById('bg-audio');
+    const audioBtn = document.getElementById('audio-toggle-btn');
+    const iconMuted = document.getElementById('audio-icon-muted');
+    const iconPlaying = document.getElementById('audio-icon-playing');
+    const video = document.getElementById('hero-video');
+    const tapOverlay = document.getElementById('tap-overlay');
+    const heroCard = document.getElementById('hero-card');
+    const scrollHint = document.getElementById('scroll-hint');
+
+    let isAudioPlaying = false;
+    let hasOpened = false;
+
+    function toggleAudio() {
+      if (audio.paused) {
+        audio.play().then(() => {
+          isAudioPlaying = true;
+          audioBtn.classList.add('playing');
+          iconMuted.style.display = 'none';
+          iconPlaying.style.display = 'block';
+        }).catch(() => {});
+      } else {
+        audio.pause();
+        isAudioPlaying = false;
+        audioBtn.classList.remove('playing');
+        iconMuted.style.display = 'block';
+        iconPlaying.style.display = 'none';
+      }
+    }
+
+    audioBtn.addEventListener('click', toggleAudio);
+
+    async function openInvitation() {
+      if (hasOpened) return;
+      hasOpened = true;
+
+      tapOverlay.classList.add('hidden');
+
+      // Reproducir video
+      try {
+        video.currentTime = 0;
+        await video.play();
+      } catch (err) {
+        console.log("Reproducción de video:", err);
+      }
+
+      // Reproducir audio con volumen suave
+      audio.volume = 0.85;
+      audio.play().then(() => {
+        isAudioPlaying = true;
+        audioBtn.classList.add('playing');
+        iconMuted.style.display = 'none';
+        iconPlaying.style.display = 'block';
+      }).catch(() => {});
+
+      // Revelar la tarjeta de los novios a los 5.5s o al terminar el video
+      setTimeout(() => {
+        heroCard.classList.add('visible');
+        scrollHint.classList.add('visible');
+      }, 5500);
+    }
+
+    tapOverlay.addEventListener('click', openInvitation);
+    video.addEventListener('click', () => {
+      if (!hasOpened) openInvitation();
+    });
+
+    video.addEventListener('ended', () => {
+      heroCard.classList.add('visible');
+      scrollHint.classList.add('visible');
+    });
+
+    // 2. CANVAS RASPADITA INTERACTIVA EN FORMA DE CORAZÓN (ROYAL GRACE HEART)
+    const scratchCanvas = document.getElementById('scratch-canvas');
+    if (scratchCanvas) {
+      const ctx = scratchCanvas.getContext('2d');
+      let isScratching = false;
+      let lastPos = null;
+      let scratchedOverLimit = false;
+
+      function initScratchCanvas() {
+        const rect = scratchCanvas.getBoundingClientRect();
+        if (rect.width === 0 || rect.height === 0) return;
+        const dpr = window.devicePixelRatio || 1;
+        scratchCanvas.width = rect.width * dpr;
+        scratchCanvas.height = rect.height * dpr;
+        ctx.scale(dpr, dpr);
+
+        const w = rect.width;
+        const h = rect.height;
+
+        // Paleta dorada metálica idéntica a Royal Grace
+        const grad = ctx.createRadialGradient(w * 0.4, h * 0.35, 10, w * 0.5, h * 0.5, Math.max(w, h) * 0.75);
+        grad.addColorStop(0, '#f6dc97');
+        grad.addColorStop(0.45, '#d4a84a');
+        grad.addColorStop(1, '#8a6620');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, w, h);
+
+        // Moteado metálico dorado y destellos
+        const specks = Math.floor(w * h * 0.22);
+        for (let i = 0; i < specks; i++) {
+          const rx = Math.random() * w;
+          const ry = Math.random() * h;
+          const rnd = Math.random();
+          let color;
+          if (rnd < 0.55) {
+            color = `rgba(255, 240, 190, ${0.35 + 0.55 * Math.random()})`;
+          } else if (rnd < 0.85) {
+            color = `rgba(212, 168, 74, ${0.4 + 0.5 * Math.random()})`;
+          } else if (rnd < 0.95) {
+            color = `rgba(120, 80, 20, ${0.4 + 0.4 * Math.random()})`;
+          } else {
+            color = `rgba(255, 255, 255, ${0.55 + 0.4 * Math.random()})`;
+          }
+          ctx.fillStyle = color;
+          const sz = Math.random() < 0.92 ? 1 : 1.5;
+          ctx.fillRect(rx, ry, sz, sz);
+        }
+
+        // Destellos estelares brillantes
+        for (let i = 0; i < 80; i++) {
+          const sx = Math.random() * w;
+          const sy = Math.random() * h;
+          ctx.fillStyle = `rgba(255, 250, 220, ${0.7 + 0.3 * Math.random()})`;
+          ctx.beginPath();
+          ctx.arc(sx, sy, 1.2 + 0.8 * Math.random(), 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        // Sombra de viñeta radial perimétrica
+        const vignette = ctx.createRadialGradient(w / 2, h / 2, Math.min(w, h) * 0.2, w / 2, h / 2, Math.max(w, h) * 0.7);
+        vignette.addColorStop(0, 'rgba(0,0,0,0)');
+        vignette.addColorStop(1, 'rgba(0,0,0,0.35)');
+        ctx.fillStyle = vignette;
+        ctx.fillRect(0, 0, w, h);
+      }
+
+      function scratchLine(p1, p2) {
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.lineWidth = 44;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+
+        if (p1) {
+          ctx.beginPath();
+          ctx.moveTo(p1.x, p1.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.stroke();
+        } else {
+          ctx.beginPath();
+          ctx.arc(p2.x, p2.y, 22, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        checkScratchPercentage();
+      }
+
+      function checkScratchPercentage() {
+        if (scratchedOverLimit) return;
+        const imgData = ctx.getImageData(0, 0, scratchCanvas.width, scratchCanvas.height);
+        let cleared = 0;
+        const totalSampled = imgData.data.length / 16;
+
+        for (let i = 3; i < imgData.data.length; i += 16) {
+          if (imgData.data[i] < 200) cleared++;
+        }
+
+        if (cleared / totalSampled >= 0.40) {
+          scratchedOverLimit = true;
+          scratchCanvas.classList.add('fade-out');
+
+          // Cambiar suavemente el título a 'Nuestra historia comienza'
+          const mainTitle = document.getElementById('scratch-main-title');
+          if (mainTitle) {
+            mainTitle.style.animation = 'none';
+            mainTitle.style.opacity = '0';
+            mainTitle.style.transform = 'translateY(10px)';
+            setTimeout(() => {
+              mainTitle.textContent = 'Nuestra historia comienza';
+              mainTitle.style.opacity = '1';
+              mainTitle.style.transform = 'translateY(0)';
+            }, 400);
+          }
+
+          triggerConfetti();
+        }
+      }
+
+      function getPos(e) {
+        const rect = scratchCanvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        return {
+          x: clientX - rect.left,
+          y: clientY - rect.top
+        };
+      }
+
+      scratchCanvas.addEventListener('mousedown', (e) => {
+        isScratching = true;
+        lastPos = getPos(e);
+        scratchLine(null, lastPos);
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isScratching) return;
+        const currentPos = getPos(e);
+        scratchLine(lastPos, currentPos);
+        lastPos = currentPos;
+      });
+
+      window.addEventListener('mouseup', () => {
+        isScratching = false;
+        lastPos = null;
+      });
+
+      scratchCanvas.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        isScratching = true;
+        lastPos = getPos(e);
+        scratchLine(null, lastPos);
+      }, { passive: false });
+
+      scratchCanvas.addEventListener('touchmove', (e) => {
+        if (!isScratching) return;
+        e.preventDefault();
+        const currentPos = getPos(e);
+        scratchLine(lastPos, currentPos);
+        lastPos = currentPos;
+      }, { passive: false });
+
+      scratchCanvas.addEventListener('touchend', () => {
+        isScratching = false;
+        lastPos = null;
+      });
+
+      if (document.readyState === 'complete') {
+        initScratchCanvas();
+      } else {
+        window.addEventListener('load', initScratchCanvas);
+      }
+      window.addEventListener('resize', initScratchCanvas);
+    }
+
+    // 2.1 INICIALIZACIÓN DEL CARRUSEL DE FOTOS (PHOTO SLIDESHOW)
+    (function initPhotoCarousel() {
+      const slides = document.querySelectorAll('.carousel-slide');
+      const dots = document.querySelectorAll('.carousel-dot');
+      const prevBtn = document.getElementById('carouselPrevBtn');
+      const nextBtn = document.getElementById('carouselNextBtn');
+      const frame = document.getElementById('carouselFrame');
+
+      if (!slides.length || !frame) return;
+
+      let currentIndex = 0;
+      let autoplayTimer = null;
+
+      function goToSlide(index) {
+        slides[currentIndex].classList.remove('active');
+        if (dots[currentIndex]) dots[currentIndex].classList.remove('active');
+
+        currentIndex = (index + slides.length) % slides.length;
+
+        slides[currentIndex].classList.add('active');
+        if (dots[currentIndex]) dots[currentIndex].classList.add('active');
+      }
+
+      function nextSlide() {
+        goToSlide(currentIndex + 1);
+      }
+
+      function prevSlide() {
+        goToSlide(currentIndex - 1);
+      }
+
+      function startAutoplay() {
+        stopAutoplay();
+        autoplayTimer = setInterval(nextSlide, 4000);
+      }
+
+      function stopAutoplay() {
+        if (autoplayTimer) {
+          clearInterval(autoplayTimer);
+          autoplayTimer = null;
+        }
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          nextSlide();
+          startAutoplay();
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          prevSlide();
+          startAutoplay();
+        });
+      }
+
+      dots.forEach((dot, idx) => {
+        dot.addEventListener('click', (e) => {
+          e.stopPropagation();
+          goToSlide(idx);
+          startAutoplay();
+        });
+      });
+
+      // Gestos de arrastre y swipe para móvil y desktop
+      let startX = 0;
+      let isDragging = false;
+
+      function handleDragStart(x) {
+        startX = x;
+        isDragging = true;
+        stopAutoplay();
+      }
+
+      function handleDragEnd(x) {
+        if (!isDragging) return;
+        isDragging = false;
+        const diffX = x - startX;
+        if (diffX < -38) {
+          nextSlide();
+        } else if (diffX > 38) {
+          prevSlide();
+        }
+        startAutoplay();
+      }
+
+      frame.addEventListener('touchstart', (e) => {
+        handleDragStart(e.touches[0].clientX);
+      }, { passive: true });
+
+      frame.addEventListener('touchend', (e) => {
+        handleDragEnd(e.changedTouches[0].clientX);
+      }, { passive: true });
+
+      frame.addEventListener('mousedown', (e) => {
+        handleDragStart(e.clientX);
+      });
+
+      window.addEventListener('mouseup', (e) => {
+        if (isDragging) handleDragEnd(e.clientX);
+      });
+
+      frame.addEventListener('mouseenter', stopAutoplay);
+      frame.addEventListener('mouseleave', startAutoplay);
+
+      startAutoplay();
+    })();
+
+    // 3. EFECTO DE CONFETTI DORADO Y OLIVA
+    function triggerConfetti() {
+      const c = document.getElementById('confetti-canvas');
+      const ctx = c.getContext('2d');
+      c.width = window.innerWidth;
+      c.height = window.innerHeight;
+
+      const particles = [];
+      const colors = ['#8a7a4e', '#3E5634', '#d4af37', '#f7f4ed', '#6b7d55', '#e9dec7'];
+
+      for (let i = 0; i < 95; i++) {
+        particles.push({
+          x: c.width / 2,
+          y: c.height * 0.45,
+          vx: (Math.random() - 0.5) * 14,
+          vy: -Math.random() * 12 - 4,
+          size: Math.random() * 7 + 4,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          rotation: Math.random() * 360,
+          rotSpeed: (Math.random() - 0.5) * 10,
+          opacity: 1
+        });
+      }
+
+      function render() {
+        ctx.clearRect(0, 0, c.width, c.height);
+        let alive = false;
+        particles.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.vy += 0.35; // Gravedad
+          p.rotation += p.rotSpeed;
+          p.opacity -= 0.009;
+
+          if (p.opacity > 0) {
+            alive = true;
+            ctx.save();
+            ctx.globalAlpha = Math.max(0, p.opacity);
+            ctx.translate(p.x, p.y);
+            ctx.rotate((p.rotation * Math.PI) / 180);
+            ctx.fillStyle = p.color;
+            ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+            ctx.restore();
+          }
+        });
+
+        if (alive) requestAnimationFrame(render);
+        else ctx.clearRect(0, 0, c.width, c.height);
+      }
+      render();
+    }
+
+    // 4. CONTADOR REGRESIVO A LA FECHA DE LA BODA (31 Enero 2027 10:30)
+    const targetDate = new Date('2027-01-31T10:30:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        document.getElementById('cd-days').innerText = '00';
+        document.getElementById('cd-hours').innerText = '00';
+        document.getElementById('cd-minutes').innerText = '00';
+        document.getElementById('cd-seconds').innerText = '00';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('cd-days').innerText = String(days).padStart(2, '0');
+      document.getElementById('cd-hours').innerText = String(hours).padStart(2, '0');
+      document.getElementById('cd-minutes').innerText = String(minutes).padStart(2, '0');
+      document.getElementById('cd-seconds').innerText = String(seconds).padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // 5. AGREGAR AL CALENDARIO (.ICS O GOOGLE CALENDAR)
+    function addToCalendar() {
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if (isMobile) {
+        // Descargar archivo .ics estándar para iOS / Android
+        const icsContent = [
+          "BEGIN:VCALENDAR",
+          "VERSION:2.0",
+          "PRODID:-//Zareqia//Boda Royal Grace//ES",
+          "CALSCALE:GREGORIAN",
+          "METHOD:PUBLISH",
+          "BEGIN:VEVENT",
+          `UID:${Date.now()}@zareqia.com`,
+          `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, "").split(".")[0]}Z`,
+          "DTSTART:20270131T103000Z",
+          "DTEND:20270131T233000Z",
+          "SUMMARY:Boda de Zayn & Nora",
+          "LOCATION:Grand Palace Hall, City centre, London",
+          "DESCRIPTION:Celebración de la Boda de Zayn y Nora en Grand Palace Hall.",
+          "STATUS:CONFIRMED",
+          "END:VEVENT",
+          "END:VCALENDAR"
+        ].join("\r\n");
+
+        const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "Boda_Zayn_Nora.ics";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else {
+        // Abrir Google Calendar en navegador
+        const gcalUrl = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent("Boda de Zayn & Nora") +
+          "&dates=20270131T103000Z/20270131T233000Z" +
+          "&details=" + encodeURIComponent("Celebración de la Boda de Zayn y Nora en Grand Palace Hall.") +
+          "&location=" + encodeURIComponent("Grand Palace Hall, City centre, London");
+        window.open(gcalUrl, "_blank");
+      }
+    }
+
+    // 6. ENVÍO DE RSVP DIRECTO A WHATSAPP
+    function handleRSVP(e) {
+      e.preventDefault();
+      const name = document.getElementById('guest-name').value;
+      const count = document.getElementById('guest-count').value;
+      const attendance = document.getElementById('attendance').value;
+      const msg = document.getElementById('guest-msg').value;
+
+      let text = `*Confirmación de Asistencia - Boda de Zayn & Nora*%0A%0A`;
+      text += `👤 *Invitado:* ${encodeURIComponent(name)}%0A`;
+      text += `👥 *Acompañantes:* ${encodeURIComponent(count)}%0A`;
+      text += `✨ *Respuesta:* ${encodeURIComponent(attendance)}%0A`;
+      if (msg) text += `💌 *Dedicatoria:* ${encodeURIComponent(msg)}%0A`;
+
+      const url = `https://api.whatsapp.com/send?text=${text}`;
+      window.open(url, '_blank');
+    }
+
+    // 7. ANIMACIONES AL HACER SCROLL (INTERSECTION OBSERVER)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
